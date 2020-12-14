@@ -1,0 +1,31 @@
+.wrapper {
+    border-radius: 5px;
+    margin: 0 auto;
+    width: 400px;
+    border:  1px solid black;
+}
+input {
+    width: 350px;
+    height: 30px;
+    
+    border-radius: 5px;
+
+}
+input.ng-touched.ng-invalid{
+    border-color: red;
+    
+}
+
+
+#form {
+    text-align: center;
+    padding: 10px;
+}
+p {
+    margin: 5px ;
+    font-size: 25px;
+    
+}
+button {
+    margin-top: 10px;
+}

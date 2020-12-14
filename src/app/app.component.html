@@ -1,0 +1,52 @@
+<div class="wrapper">
+
+<form [formGroup]="myForm" id="form" (ngSubmit)="onSubmit()">
+  <label  class="label" >
+    <p>Имя</p>
+    <input type="text"  formControlName="firstName" />
+  </label>
+  <br>
+  
+  <label  class="label">
+    <p>Фамилия</p>
+    <input type="text"  formControlName="secondName" />
+  </label>
+  <br>
+  
+
+  <label for="email" class="label" >
+    <p>email</p>
+    <input type="text"  formControlName="email" />
+  </label>
+  <div class="validator"  *ngIf="myForm.get('email').invalid && myForm.get('email').touched">
+    <small *ngIf="myForm.get('email').errors.required" >Введите email</small>
+    <small *ngIf="myForm.get('email').errors.email" >Некорректный email</small>
+  </div>
+  <br>
+  
+  <label  class="label" >
+    <p>Пароль</p>
+    <input type="password"  formControlName="firstPassword" />
+  </label>
+  <div class="validator"  *ngIf="myForm.get('firstPassword').invalid && myForm.get('firstPassword').touched">
+    <small *ngIf="myForm.get('firstPassword').errors.required" >Введите пароль</small> 
+    <small *ngIf="myForm.get('firstPassword').errors.minlength" >Длинна должна быть не менее .</small><br>
+    <small *ngIf="myForm.get('firstPassword').errors.pattern" >Пароль должен состоять из заглавной буквы, цифры и спец.символа</small>
+  </div>
+  <br>
+  
+  <label  class="label">
+    <p>Повторите пароль</p>
+    <input type="password"  formControlName="secondPassword" />
+  </label>
+  <div class="validator"  *ngIf="myForm.get('secondPassword').invalid && myForm.get('secondPassword').touched">
+    <small *ngIf="myForm.get('secondPassword').errors.required" >Введите пароль</small> 
+    <small *ngIf="myForm.get('secondPassword').errors.mustMatch" >Пароли не совпадают</small><br>
+    
+  </div>
+  <br>
+  
+
+  <button type="submit" >отправить</button>
+</form>
+</div>
